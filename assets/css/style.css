@@ -13,7 +13,7 @@
     justify-content: center;
     width: 100%;
     height: 100svh;
-    background-color: hsl(225, 100%, 94%);
+    background-color: #e0e8ff;
 }
 
 .card {
@@ -49,7 +49,7 @@
     justify-content: space-between;
     align-items: center;
     border: 1px solid #eee;
-    background-color: hsl(225, 100%, 98%);
+    background-color: #f5f7ff;
     padding: 10px;
     margin: 20px;
     border-radius: 10px;
@@ -97,7 +97,7 @@
     content: "";
     inset: 0;
     border-radius: inherit;
-    background: conic-gradient(from var(--gradient-color), chartreuse, #ff008c, purple, #ff008c, chartreuse);
+    background: conic-gradient(from var(--gradient-color), #7fff00, #ff008c, #7fff00, #ff008c, #7fff00);
 }
 
 .box::before {
@@ -160,6 +160,5 @@
         background: url(../images/pattern-background-desktop.svg), #e0e8ff;
         background-size: 100%;
         background-repeat: no-repeat;
-        /* background-position: center; */
     }
 }
