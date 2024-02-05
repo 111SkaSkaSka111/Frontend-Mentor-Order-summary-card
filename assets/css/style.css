@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+* {
+    font-family: "Red Hat Display", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100svh;
+    background-color: hsl(225, 100%, 94%);
+}
+
+.card {
+    max-width: 330px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 20px 1px;
+}
+
+.card .img {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px 20px 0 0;
+    background: url(../images/illustration-hero.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card h1 {
+    text-align: center;
+    font-weight: 900;
+    margin: 20px 0;
+}
+
+.card p {
+    text-align: center;
+    color: hsl(224, 23%, 55%);
+    font-weight: 500;
+}
+
+.card .plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #eee;
+    background-color: hsl(225, 100%, 98%);
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+
+    & .logo {
+        background: url(../images/icon-music.svg);
+        width: 40px;
+        height: 40px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    & p {
+        font-size: 14px;
+    }
+
+    & a:hover {
+        text-decoration: none;
+        opacity: 0.8;
+    }
+}
+
+.box {
+    width: fit-content;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    display: flex;
+    text-align: center;
+    line-height: 42px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+@property --gradient-color {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.box::after,
+.box::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    border-radius: inherit;
+    background: conic-gradient(from var(--gradient-color), chartreuse, #ff008c, purple, #ff008c, chartreuse);
+}
+
+.box::before {
+    z-index: 10;
+}
+
+.box::after {
+    filter: blur(0.5rem);
+}
+
+.box:hover::after,
+.box:hover::before {
+    animation: rotate 5s linear infinite;
+}
+
+.box:hover a {
+    background-color: #5b4df5;
+}
+
+@keyframes rotate {
+    0% {
+        --gradient-color: 0deg;
+    }
+
+    100% {
+        --gradient-color: 360deg;
+    }
+}
+
+.box a {
+    position: absolute;
+    border-radius: 8px;
+    background-color: #3829e0;
+    color: #fff;
+    text-decoration: none;
+    inset: 3px;
+    z-index: 99;
+    border: 1px solid #000;
+    /* display: none; */
+}
+
+.cancel {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: 700;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.cancel:hover {
+    opacity: 1;
+}
+
+@media (min-width: 500px) {
+    .container {
+        background: url(../images/pattern-background-desktop.svg), #e0e8ff;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        /* background-position: center; */
+    }
+}
